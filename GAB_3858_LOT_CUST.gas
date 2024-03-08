@@ -1,0 +1,477 @@
+Program.Sub.ScreenSU.Start
+gui.F_LOT_CUST..create
+gui.F_LOT_CUST..caption("List of Customers for GAB_LOT")
+gui.F_LOT_CUST..size(5775,4920)
+gui.F_LOT_CUST..position(0,0)
+gui.F_LOT_CUST..event(unload,F_End)
+gui.F_LOT_CUST..alwaysontop(False)
+gui.F_LOT_CUST..fontname("Arial")
+gui.F_LOT_CUST..fontsize(8)
+gui.F_LOT_CUST..forecolor(0)
+gui.F_LOT_CUST..fontstyle(,,,,)
+gui.F_LOT_CUST..BackColor(-2147483633)
+gui.F_LOT_CUST..controlbox(True)
+gui.F_LOT_CUST..maxbutton(True)
+gui.F_LOT_CUST..minbutton(True)
+gui.F_LOT_CUST..mousepointer(0)
+gui.F_LOT_CUST..moveable(True)
+gui.F_LOT_CUST..sizeable(True)
+gui.F_LOT_CUST..ShowInTaskBar(True)
+gui.F_LOT_CUST..titlebar(True)
+gui.F_LOT_CUST.frmAddCust.create(frame)
+gui.F_LOT_CUST.frmAddCust.caption("Add Customer")
+gui.F_LOT_CUST.frmAddCust.size(5400,1485)
+gui.F_LOT_CUST.frmAddCust.position(75,10)
+gui.F_LOT_CUST.frmAddCust.visible(True)
+gui.F_LOT_CUST.frmAddCust.fontname("Arial")
+gui.F_LOT_CUST.frmAddCust.fontsize(8)
+gui.F_LOT_CUST.frmDelCust.create(frame)
+gui.F_LOT_CUST.frmDelCust.caption("Remove Customer")
+gui.F_LOT_CUST.frmDelCust.size(5400,1350)
+gui.F_LOT_CUST.frmDelCust.position(70,1590)
+gui.F_LOT_CUST.frmDelCust.visible(True)
+gui.F_LOT_CUST.frmDelCust.fontname("Arial")
+gui.F_LOT_CUST.frmDelCust.fontsize(8)
+gui.F_LOT_CUST.frmAll.create(frame)
+gui.F_LOT_CUST.frmAll.caption("Select All Customers")
+gui.F_LOT_CUST.frmAll.size(5430,1425)
+gui.F_LOT_CUST.frmAll.position(60,2985)
+gui.F_LOT_CUST.frmAll.visible(True)
+gui.F_LOT_CUST.frmAll.fontname("Arial")
+gui.F_LOT_CUST.frmAll.fontsize(8)
+gui.F_LOT_CUST.txtCustIDAdd.create(textbox,"",True,1080,300,0,110,400,False,0,Arial,8,-2147483643,1)
+gui.F_LOT_CUST.txtCustIDAdd.parent("frmaddcust")
+gui.F_LOT_CUST.txtCustNameAdd.create(textbox,"",True,2580,300,0,1250,405,False,0,Arial,8,-2147483643,1)
+gui.F_LOT_CUST.txtCustNameAdd.parent("frmaddcust")
+gui.F_LOT_CUST.lblCustID.create(label,"ID:",True,345,255,1,125,200,True,0,Arial,8,-2147483633,0)
+gui.F_LOT_CUST.lblCustID.parent("frmaddcust")
+gui.F_LOT_CUST.lblCustnameAdd.create(label,"Name:",True,555,255,1,1280,200,True,0,Arial,8,-2147483633,0)
+gui.F_LOT_CUST.lblCustnameAdd.parent("frmaddcust")
+gui.F_LOT_CUST.cmdAddCustBrw.create(button)
+gui.F_LOT_CUST.cmdAddCustBrw.caption("^")
+gui.F_LOT_CUST.cmdAddCustBrw.visible(True)
+gui.F_LOT_CUST.cmdAddCustBrw.size(360,315)
+gui.F_LOT_CUST.cmdAddCustBrw.zorder(0)
+gui.F_LOT_CUST.cmdAddCustBrw.position(3815,385)
+gui.F_LOT_CUST.cmdAddCustBrw.enabled(True)
+gui.F_LOT_CUST.cmdAddCustBrw.parent("frmaddcust")
+gui.F_LOT_CUST.cmdAddCustBrw.fontname("Arial")
+gui.F_LOT_CUST.cmdAddCustBrw.fontsize(8)
+gui.F_LOT_CUST.cmdAddCustBrw.event(click,cmdaddcustbrw_click)
+gui.F_LOT_CUST.cmdAddCust.create(button)
+gui.F_LOT_CUST.cmdAddCust.caption("Add")
+gui.F_LOT_CUST.cmdAddCust.visible(True)
+gui.F_LOT_CUST.cmdAddCust.size(795,330)
+gui.F_LOT_CUST.cmdAddCust.zorder(0)
+gui.F_LOT_CUST.cmdAddCust.position(4360,360)
+gui.F_LOT_CUST.cmdAddCust.enabled(True)
+gui.F_LOT_CUST.cmdAddCust.parent("frmaddcust")
+gui.F_LOT_CUST.cmdAddCust.fontname("Arial")
+gui.F_LOT_CUST.cmdAddCust.fontsize(8)
+gui.F_LOT_CUST.cmdAddCust.event(click,cmdaddcust_click)
+gui.F_LOT_CUST.txtCustIDRem.create(textbox,"",True,1080,300,0,110,400,False,0,Arial,8,-2147483643,1)
+gui.F_LOT_CUST.txtCustIDRem.parent("frmdelcust")
+gui.F_LOT_CUST.txtCustNameRem.create(textbox,"",True,2580,300,0,1250,405,False,0,Arial,8,-2147483643,1)
+gui.F_LOT_CUST.txtCustNameRem.parent("frmdelcust")
+gui.F_LOT_CUST.lblRemCustID.create(label,"ID:",True,345,255,1,125,200,True,0,Arial,8,-2147483633,0)
+gui.F_LOT_CUST.lblRemCustID.parent("frmdelcust")
+gui.F_LOT_CUST.lblCustNameRem.create(label,"Name:",True,555,255,1,1280,200,True,0,Arial,8,-2147483633,0)
+gui.F_LOT_CUST.lblCustNameRem.parent("frmdelcust")
+gui.F_LOT_CUST.cmdRemCustBrw.create(button)
+gui.F_LOT_CUST.cmdRemCustBrw.caption("^")
+gui.F_LOT_CUST.cmdRemCustBrw.visible(True)
+gui.F_LOT_CUST.cmdRemCustBrw.size(360,315)
+gui.F_LOT_CUST.cmdRemCustBrw.zorder(0)
+gui.F_LOT_CUST.cmdRemCustBrw.position(3815,385)
+gui.F_LOT_CUST.cmdRemCustBrw.enabled(True)
+gui.F_LOT_CUST.cmdRemCustBrw.parent("frmdelcust")
+gui.F_LOT_CUST.cmdRemCustBrw.fontname("Arial")
+gui.F_LOT_CUST.cmdRemCustBrw.fontsize(8)
+gui.F_LOT_CUST.cmdRemCustBrw.event(click,cmdremcustbrw_click)
+gui.F_LOT_CUST.cmdRemove.create(button)
+gui.F_LOT_CUST.cmdRemove.caption("Remove")
+gui.F_LOT_CUST.cmdRemove.visible(True)
+gui.F_LOT_CUST.cmdRemove.size(795,330)
+gui.F_LOT_CUST.cmdRemove.zorder(0)
+gui.F_LOT_CUST.cmdRemove.position(4360,360)
+gui.F_LOT_CUST.cmdRemove.enabled(True)
+gui.F_LOT_CUST.cmdRemove.parent("frmdelcust")
+gui.F_LOT_CUST.cmdRemove.fontname("Arial")
+gui.F_LOT_CUST.cmdRemove.fontsize(8)
+gui.F_LOT_CUST.cmdRemove.event(click,cmdremove_click)
+gui.F_LOT_CUST.optTrue.create(option)
+gui.F_LOT_CUST.optTrue.caption("All")
+gui.F_LOT_CUST.optTrue.visible(True)
+gui.F_LOT_CUST.optTrue.size(615,255)
+gui.F_LOT_CUST.optTrue.zorder(0)
+gui.F_LOT_CUST.optTrue.position(200,200)
+gui.F_LOT_CUST.optTrue.enabled(True)
+gui.F_LOT_CUST.optTrue.alignment(0)
+gui.F_LOT_CUST.optTrue.parent("frmall")
+gui.F_LOT_CUST.optTrue.fontname("Arial")
+gui.F_LOT_CUST.optTrue.fontsize(8)
+gui.F_LOT_CUST.optCustom.create(option)
+gui.F_LOT_CUST.optCustom.caption("Custom")
+gui.F_LOT_CUST.optCustom.visible(True)
+gui.F_LOT_CUST.optCustom.size(930,255)
+gui.F_LOT_CUST.optCustom.zorder(0)
+gui.F_LOT_CUST.optCustom.position(195,455)
+gui.F_LOT_CUST.optCustom.enabled(True)
+gui.F_LOT_CUST.optCustom.alignment(0)
+gui.F_LOT_CUST.optCustom.parent("frmall")
+gui.F_LOT_CUST.optCustom.fontname("Arial")
+gui.F_LOT_CUST.optCustom.fontsize(8)
+gui.F_LOT_CUST.cmdAllSave.create(button)
+gui.F_LOT_CUST.cmdAllSave.caption("Save")
+gui.F_LOT_CUST.cmdAllSave.visible(True)
+gui.F_LOT_CUST.cmdAllSave.size(855,375)
+gui.F_LOT_CUST.cmdAllSave.zorder(0)
+gui.F_LOT_CUST.cmdAllSave.position(4355,330)
+gui.F_LOT_CUST.cmdAllSave.enabled(True)
+gui.F_LOT_CUST.cmdAllSave.parent("frmall")
+gui.F_LOT_CUST.cmdAllSave.fontname("Arial")
+gui.F_LOT_CUST.cmdAllSave.fontsize(8)
+gui.F_LOT_CUST.cmdAllSave.event(click,cmdallsave_click)
+gui.F_LOT_CUST.lblPath.create(label,"Customer Path:",True,1155,255,1,125,800,True,0,Arial,8,-2147483633,0)
+gui.F_LOT_CUST.lblPath.parent("frmaddcust")
+gui.F_LOT_CUST.txtPath.create(textbox,"",True,3735,300,0,185,1015,True,0,Arial,8,-2147483643,1)
+gui.F_LOT_CUST.cmdPathBrw.create(button)
+gui.F_LOT_CUST.cmdPathBrw.caption("^")
+gui.F_LOT_CUST.cmdPathBrw.visible(True)
+gui.F_LOT_CUST.cmdPathBrw.size(375,315)
+gui.F_LOT_CUST.cmdPathBrw.zorder(0)
+gui.F_LOT_CUST.cmdPathBrw.position(3800,985)
+gui.F_LOT_CUST.cmdPathBrw.enabled(True)
+gui.F_LOT_CUST.cmdPathBrw.parent("frmaddcust")
+gui.F_LOT_CUST.cmdPathBrw.fontname("Arial")
+gui.F_LOT_CUST.cmdPathBrw.fontsize(8)
+gui.F_LOT_CUST.cmdPathBrw.event(click,cmdpathbrw_click)
+gui.F_LOT_CUST.lblAllPath.create(label,"Path:",True,1155,255,1,145,775,True,0,Arial,8,-2147483633,0)
+gui.F_LOT_CUST.lblAllPath.parent("frmall")
+gui.F_LOT_CUST.txtAllPath.create(textbox,"",True,3645,300,0,125,985,True,0,Arial,8,-2147483643,1)
+gui.F_LOT_CUST.txtAllPath.parent("frmall")
+gui.F_LOT_CUST.cmdAllPath.create(button)
+gui.F_LOT_CUST.cmdAllPath.caption("^")
+gui.F_LOT_CUST.cmdAllPath.visible(True)
+gui.F_LOT_CUST.cmdAllPath.size(375,315)
+gui.F_LOT_CUST.cmdAllPath.zorder(0)
+gui.F_LOT_CUST.cmdAllPath.position(3765,975)
+gui.F_LOT_CUST.cmdAllPath.enabled(True)
+gui.F_LOT_CUST.cmdAllPath.parent("frmall")
+gui.F_LOT_CUST.cmdAllPath.fontname("Arial")
+gui.F_LOT_CUST.cmdAllPath.fontsize(8)
+gui.F_LOT_CUST.cmdAllPath.event(click,cmdallpath_click)
+gui.F_LOT_CUST.lblCustPathRem.create(label,"Path:",True,1155,255,1,130,730,True,0,Arial,8,-2147483633,0)
+gui.F_LOT_CUST.lblCustPathRem.parent("frmdelcust")
+gui.F_LOT_CUST.txtCustPathRem.create(textbox,"",True,3645,300,0,100,945,False,0,Arial,8,-2147483643,1)
+gui.F_LOT_CUST.txtCustPathRem.parent("frmdelcust")
+gui.F_LOT_CUST.txtCustIDAdd.tabstop(True)
+gui.F_LOT_CUST.txtCustIDAdd.tabindex(1)
+gui.F_LOT_CUST.txtCustNameAdd.tabstop(True)
+gui.F_LOT_CUST.txtCustNameAdd.tabindex(2)
+gui.F_LOT_CUST.cmdAddCustBrw.tabstop(True)
+gui.F_LOT_CUST.cmdAddCustBrw.tabindex(3)
+gui.F_LOT_CUST.cmdAddCust.tabstop(True)
+gui.F_LOT_CUST.cmdAddCust.tabindex(4)
+gui.F_LOT_CUST.txtPath.tabstop(True)
+gui.F_LOT_CUST.txtPath.tabindex(5)
+gui.F_LOT_CUST.cmdPathBrw.tabstop(True)
+gui.F_LOT_CUST.cmdPathBrw.tabindex(6)
+gui.F_LOT_CUST.txtCustIDRem.tabstop(True)
+gui.F_LOT_CUST.txtCustIDRem.tabindex(7)
+gui.F_LOT_CUST.txtCustNameRem.tabstop(True)
+gui.F_LOT_CUST.txtCustNameRem.tabindex(8)
+gui.F_LOT_CUST.cmdRemCustBrw.tabstop(True)
+gui.F_LOT_CUST.cmdRemCustBrw.tabindex(9)
+gui.F_LOT_CUST.cmdRemove.tabstop(True)
+gui.F_LOT_CUST.cmdRemove.tabindex(10)
+gui.F_LOT_CUST.optTrue.tabstop(True)
+gui.F_LOT_CUST.optTrue.tabindex(11)
+gui.F_LOT_CUST.optCustom.tabstop(True)
+gui.F_LOT_CUST.optCustom.tabindex(12)
+gui.F_LOT_CUST.txtAllPath.tabstop(True)
+gui.F_LOT_CUST.txtAllPath.tabindex(13)
+gui.F_LOT_CUST.cmdAllPath.tabstop(True)
+gui.F_LOT_CUST.cmdAllPath.tabindex(14)
+gui.F_LOT_CUST.cmdAllSave.tabstop(True)
+gui.F_LOT_CUST.cmdAllSave.tabindex(15)
+gui.F_LOT_CUST.txtCustPathRem.tabstop(True)
+gui.F_LOT_CUST.txtCustPathRem.tabindex(50)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+
+F.odbc.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+V.Local.sSql.Set("SELECT CUST, NAME,PATH FROM GAB_3858_LOT_CUST WHERE CUST='000000'")
+F.ODBC.connection!conx.OpenRecordsetRW("rstCust",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstCust.EOF,=,True)
+	F.ODBC.conx!rstCust.AddNew
+	F.ODBC.conx!rstCust.Set!CUST("000000")
+	F.ODBC.conx!rstCust.Set!NAME("C")
+	F.ODBC.conx!rstCust.Set!PATH("")
+	F.ODBC.conx!rstCust.Update
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.ODBC.conx!rstCust.FieldValTrim!NAME,=,"C")
+		Gui.F_LOT_CUST.optCustom.Value(1)
+		Gui.F_LOT_CUST.optTrue.Value(0)
+		Gui.F_LOT_CUST.txtAllPath.Text(V.ODBC.conx!rstCust.FieldValTrim!PATH)
+	F.Intrinsic.Control.Else
+		Gui.F_LOT_CUST.optCustom.Value(0)
+		Gui.F_LOT_CUST.optTrue.Value(1)
+		Gui.F_LOT_CUST.txtAllPath.Text(V.ODBC.conx!rstCust.FieldValTrim!PATH)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstCust.Close
+F.ODBC.Connection!conx.Close
+
+Gui.F_LOT_CUST..Show
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_3858_LOT_CUST.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+program.sub.cmdaddcustbrw_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdaddcustbrw_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.Browser(205,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet(0),!=,"***CANCEL***")
+	Gui.F_LOT_CUST.txtCustIDAdd.Text("")
+	Gui.F_LOT_CUST.txtCustNameAdd.Text("")
+	F.intrinsic.string.split(Variable.local.sRet,"*!*",Variable.local.sRet)
+	Gui.F_LOT_CUST.txtCustIDAdd.Text(V.Local.sRet(0))
+	Gui.F_LOT_CUST.txtCustNameAdd.Text(V.Local.sRet(1))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdaddcustbrw_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_3858_LOT_CUST.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdaddcustbrw_click.end
+
+program.sub.cmdremcustbrw_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdremcustbrw_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+
+F.odbc.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+V.Local.sSql.Set("SELECT CUST, NAME, PATH FROM GAB_3858_LOT_CUST WHERE CUST<>'000000' ORDER BY CUST")
+F.Intrinsic.String.Split("Cust*!*Name*!*Path","*!*",V.local.sTitles)
+F.Intrinsic.String.Split("1000*!*2500*!*3000","*!*",V.local.iWidths)
+F.Intrinsic.UI.MiniBrowser("Select a Customer to delete from GAB_3858_LOT_CUST table",conx,V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet(0),!=,"***CANCEL***")
+	Gui.F_LOT_CUST.txtCustIDRem.Text("")
+	Gui.F_LOT_CUST.txtCustNameRem.Text("")
+	Gui.F_LOT_CUST.txtCustPathRem.Text("")
+	F.intrinsic.string.split(Variable.local.sRet,"*!*",Variable.local.sRet)
+	Gui.F_LOT_CUST.txtCustIDRem.Text(V.Local.sRet(0))
+	Gui.F_LOT_CUST.txtCustNameRem.Text(V.Local.sRet(1))
+	Gui.F_LOT_CUST.txtCustPathRem.Text(V.Local.sRet(2))
+F.Intrinsic.Control.EndIf
+F.ODBC.Connection!conx.Close
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdremcustbrw_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_3858_LOT_CUST.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdremcustbrw_click.end
+
+program.sub.cmdaddcust_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdaddcust_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sMessage.Declare(String)
+V.Local.sMessage.Set("Record Updated")
+
+F.Intrinsic.Control.If(V.Screen.F_LOT_CUST!txtCustIDAdd.Text,<>,"")
+	F.odbc.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+	F.Intrinsic.String.Concat("SELECT * FROM GAB_3858_LOT_CUST WHERE CUST='",V.Screen.F_LOT_CUST!txtCustIDAdd.Text,"'",V.Local.sSql)
+	F.ODBC.connection!conx.OpenRecordsetRW("rstCust",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstCust.EOF,=,True)
+		F.ODBC.conx!rstCust.AddNew
+		F.ODBC.conx!rstCust.Set!CUST(V.Screen.F_LOT_CUST!txtCustIDAdd.Text)
+		V.Local.sMessage.Set("Record Added")
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstCust.Set!NAME(V.Screen.F_LOT_CUST!txtCustNameAdd.Text)
+	F.ODBC.conx!rstCust.Set!PATH(V.Screen.F_LOT_CUST!txtPath.Text)
+	F.ODBC.conx!rstCust.Update
+	F.Intrinsic.UI.Msgbox(V.Local.sMessage,"GAB_3858_LOT_CUST table")
+	Gui.F_LOT_CUST.txtCustIDAdd.Text("")
+	Gui.F_LOT_CUST.txtCustNameAdd.Text("")
+	Gui.F_LOT_CUST.txtPath.Text("")
+	F.ODBC.conx!rstCust.Close
+	F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.EndIf
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdaddcust_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_3858_LOT_CUST.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdaddcust_click.end
+
+program.sub.cmdremove_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdremove_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+
+F.odbc.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+F.Intrinsic.String.Concat("SELECT * FROM GAB_3858_LOT_CUST WHERE CUST='",V.Screen.F_LOT_CUST!txtCustIDRem.Text,"'",V.Local.sSql)
+F.ODBC.connection!conx.OpenRecordsetRW("rstCust",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstCust.EOF,=,False)
+	F.ODBC.conx!rstCust.Delete
+	F.Intrinsic.UI.Msgbox("Record Deleted","GAB_3858_LOT_CUST table")
+	F.ODBC.conx!rstCust.Update
+	Gui.F_LOT_CUST.txtCustIDRem.Text("")
+	Gui.F_LOT_CUST.txtCustNameRem.Text("")
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstCust.Close
+F.ODBC.Connection!conx.Close
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdremove_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_3858_LOT_CUST.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdremove_click.end
+
+program.sub.cmdallsave_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdallsave_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+
+F.odbc.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+V.Local.sSql.Set("SELECT CUST, NAME, PATH FROM GAB_3858_LOT_CUST WHERE CUST='000000'")
+F.ODBC.connection!conx.OpenRecordsetRW("rstCust",V.Local.sSql)
+F.Intrinsic.Control.If(V.Screen.F_LOT_CUST!optTrue.Value,=,True)
+	F.ODBC.conx!rstCust.Set!NAME("A")
+	F.ODBC.conx!rstCust.Set!PATH(V.Screen.F_LOT_CUST!txtAllPath.Text)
+	F.ODBC.conx!rstCust.Update
+F.Intrinsic.Control.Else
+	F.ODBC.conx!rstCust.Set!NAME("C")
+	F.ODBC.conx!rstCust.Set!PATH(V.Screen.F_LOT_CUST!txtAllPath.Text)
+	F.ODBC.conx!rstCust.Update
+F.Intrinsic.Control.EndIf
+F.Intrinsic.UI.Msgbox("Option Saved","GAB_3858_LOT_CUST table")
+F.ODBC.conx!rstCust.Close
+F.ODBC.Connection!conx.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdallsave_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_3858_LOT_CUST.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdallsave_click.end
+
+program.sub.F_End.start
+F.Intrinsic.Control.End
+
+program.sub.F_End.end
+
+program.sub.cmdpathbrw_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdpathbrw_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sPath.Declare(String)
+
+F.Intrinsic.UI.FolderBrowser("Select Folder for Path",V.Local.sPath)
+Gui.F_LOT_CUST.txtPath.Text(V.Local.sPath)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdpathbrw_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_3858_LOT_CUST.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdpathbrw_click.end
+
+program.sub.cmdallpath_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdallpath_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sPath.Declare(String)
+
+F.Intrinsic.UI.FolderBrowser("Select Folder for Path",V.Local.sPath)
+Gui.F_LOT_CUST.txtAllPath.Text(V.Local.sPath)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdallpath_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_3858_LOT_CUST.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdallpath_click.end
+
+Program.Sub.Comments.Start
+${$0$}$GAB_LOT_CUST$}$SUPERVSR$}$4/5/2013
+Program.Sub.Comments.End
+
